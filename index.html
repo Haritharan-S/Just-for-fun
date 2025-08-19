@@ -1,1 +1,291 @@
-First code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Intelligent Traffic Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white antialiased">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12 md:mb-20">
+            <h1 class="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#00A6A6] to-[#772D8B] mb-2">Intelligent Traffic Management</h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">Using Computer Vision to Build the Smart, Safe, and Efficient Cities of Tomorrow.</p>
+        </header>
+
+        <section id="problem" class="mb-16 md:mb-24">
+            <h2 class="text-3xl font-bold text-center mb-8">The Problem: Our Cities are at a Standstill</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <div class="text-5xl font-extrabold text-[#F28F3B] mb-2">1.5 Billion</div>
+                    <p class="text-gray-400">Hours Lost Annually by Commuters in Major Cities</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <div class="text-5xl font-extrabold text-[#F26A4B] mb-2">$88 Billion</div>
+                    <p class="text-gray-400">Economic Drain from Congestion Costs in the US Alone</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <div class="text-5xl font-extrabold text-[#00A6A6] mb-2">30%</div>
+                    <p class="text-gray-400">Of Urban Congestion is Caused by Outdated, Fixed-Timer Signals</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pipeline" class="mb-16 md:mb-24">
+            <h2 class="text-3xl font-bold text-center mb-10">Our Vision-Based Solution: A 4-Step Pipeline</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-4">
+                <div class="flex items-center flex-col md:flex-row text-center md:text-left">
+                    <div class="bg-[#00878F] text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg">1</div>
+                    <div class="mt-2 md:mt-0 md:ml-4">
+                        <h3 class="text-xl font-semibold">Data Acquisition</h3>
+                        <p class="text-gray-400 max-w-xs">Live video from CCTV cameras.</p>
+                    </div>
+                </div>
+                <div class="text-4xl text-gray-600 transform rotate-90 md:rotate-0">→</div>
+                <div class="flex items-center flex-col md:flex-row text-center md:text-left">
+                    <div class="bg-[#772D8B] text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg">2</div>
+                    <div class="mt-2 md:mt-0 md:ml-4">
+                        <h3 class="text-xl font-semibold">CV Engine</h3>
+                        <p class="text-gray-400 max-w-xs">AI detects & classifies objects.</p>
+                    </div>
+                </div>
+                <div class="text-4xl text-gray-600 transform rotate-90 md:rotate-0">→</div>
+                <div class="flex items-center flex-col md:flex-row text-center md:text-left">
+                    <div class="bg-[#F28F3B] text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg">3</div>
+                    <div class="mt-2 md:mt-0 md:ml-4">
+                        <h3 class="text-xl font-semibold">Real-Time Analysis</h3>
+                        <p class="text-gray-400 max-w-xs">Extracts speed, count & density.</p>
+                    </div>
+                </div>
+                <div class="text-4xl text-gray-600 transform rotate-90 md:rotate-0">→</div>
+                <div class="flex items-center flex-col md:flex-row text-center md:text-left">
+                    <div class="bg-[#F26A4B] text-white w-24 h-24 rounded-full flex items-center justify-center text-4xl font-bold shadow-lg">4</div>
+                    <div class="mt-2 md:mt-0 md:ml-4">
+                        <h3 class="text-xl font-semibold">Intelligent Action</h3>
+                        <p class="text-gray-400 max-w-xs">Adapts signals dynamically.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="applications" class="mb-16 md:mb-24">
+            <h2 class="text-3xl font-bold text-center mb-10">Key Applications in Action</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center">Adaptive Signals: Reduced Wait Times</h3>
+                    <p class="text-gray-400 text-center mb-4">Our system dramatically cuts down intersection wait times by prioritizing traffic flow based on real-time demand, leading to a smoother, faster commute.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="waitTimeChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <h3 class="text-xl font-bold mb-4 text-center">Data Analytics: Traffic Volume Analysis</h3>
+                    <p class="text-gray-400 text-center mb-4">By analyzing vehicle detection data, we can understand the composition of traffic, helping planners make better infrastructure decisions.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="trafficCompositionChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700 lg:col-span-2">
+                    <h3 class="text-xl font-bold mb-4 text-center">Predictive Power: Forecasting Traffic Flow</h3>
+                    <p class="text-gray-400 text-center mb-4">Using historical data, our system forecasts traffic volume, allowing for proactive adjustments to prevent congestion before it even starts.</p>
+                    <div class="chart-container h-64 md:h-80">
+                        <canvas id="predictionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="safety" class="mb-16 md:mb-24">
+            <h2 class="text-3xl font-bold text-center mb-10">Enhancing Road Safety: 24/7 Incident Detection</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <div class="text-6xl mb-3">💥</div>
+                    <h3 class="text-lg font-semibold">Accident Detection</h3>
+                    <p class="text-gray-400">Identifies sudden stops and alerts authorities instantly.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <div class="text-6xl mb-3">↪️</div>
+                    <h3 class="text-lg font-semibold">Wrong-Way Driver</h3>
+                    <p class="text-gray-400">Flags vehicles moving against the flow of traffic.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-xl border border-gray-700">
+                    <div class="text-6xl mb-3">🅿️</div>
+                    <h3 class="text-lg font-semibold">Illegal Parking</h3>
+                    <p class="text-gray-400">Detects vehicles stopped in no-go zones, preventing bottlenecks.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 pt-8 border-t border-gray-700">
+            <p>A Vision for Smarter Urban Mobility.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+
+        const wrapLabels = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const waitTimeCtx = document.getElementById('waitTimeChart').getContext('2d');
+            new Chart(waitTimeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Fixed-Timer System', 'Smart Adaptive System'],
+                    datasets: [{
+                        label: 'Average Wait Time (Seconds)',
+                        data: [95, 22],
+                        backgroundColor: ['#F26A4B', '#00A6A6'],
+                        borderColor: ['#F26A4B', '#00A6A6'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#9CA3AF' }
+                        },
+                        y: {
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#9CA3AF' }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    }
+                }
+            });
+
+            const trafficCompositionCtx = document.getElementById('trafficCompositionChart').getContext('2d');
+            new Chart(trafficCompositionCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Passenger Cars', 'Commercial Trucks', 'Buses', 'Motorcycles'],
+                    datasets: [{
+                        label: 'Traffic Composition',
+                        data: [65, 15, 10, 10],
+                        backgroundColor: ['#00A6A6', '#772D8B', '#F28F3B', '#F26A4B'],
+                        borderColor: '#4B5563',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#9CA3AF' }
+                        },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    }
+                }
+            });
+
+            const predictionCtx = document.getElementById('predictionChart').getContext('2d');
+            new Chart(predictionCtx, {
+                type: 'line',
+                data: {
+                    labels: ['6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM'],
+                    datasets: [
+                        {
+                            label: 'Actual Traffic Volume',
+                            data: [120, 450, 300, 400, 650, 250],
+                            borderColor: '#00A6A6',
+                            backgroundColor: 'rgba(0, 166, 166, 0.2)',
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Predicted Traffic Volume',
+                            data: [110, 460, 290, 410, 640, 260],
+                            borderColor: '#F28F3B',
+                            backgroundColor: 'transparent',
+                            borderDash: [5, 5],
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#9CA3AF' }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            ticks: { color: '#9CA3AF' }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { color: '#9CA3AF' }
+                        },
+                        tooltip: { callbacks: { title: tooltipTitleCallback } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
